@@ -1,0 +1,31 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{ avenger.superhero }}</mat-card-title>
+    <mat-card-subtitle>{{ avenger.alter_ego }}</mat-card-subtitle>
+  </mat-card-header>
+
+  <img mat-card-image [src]="avenger | imagen">
+  <mat-card-content>
+    <h3>{{ avenger.publisher }}</h3>
+    <p>
+      <strong>First appearance:</strong> {{ avenger.first_appearance }}
+      <br>
+      <strong>Characters:</strong> {{ avenger.characters }}
+    </p>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button
+      mat-raised-button
+      color="primary"
+      [routerLink]="['/avengers', avenger.id]">
+      Read more...
+    </button>
+    <button
+      mat-raised-button
+      color="accent"
+      [routerLink]="['/avengers/edit', avenger.id]">
+      Edit
+    </button>
+  </mat-card-actions>
+</mat-card>

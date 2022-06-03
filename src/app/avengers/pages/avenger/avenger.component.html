@@ -1,1 +1,47 @@
-<p>avenger works!</p>
+<mat-grid-list *ngIf="!avenger; else divAvenger" cols="1">
+  <mat-grid-tile>
+    <mat-spinner></mat-spinner>
+  </mat-grid-tile>
+</mat-grid-list>
+
+
+<ng-template #divAvenger>
+
+  <mat-toolbar class="border-radius" color="primary">
+    <h1>{{ avenger.superhero }} - <small>{{ avenger.alter_ego }}</small></h1>
+  </mat-toolbar>
+
+  <br>
+
+  <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="30px">
+
+    <div fxFlex="30">
+      <img class="border-radius" [src]="avenger | imagen">
+    </div>
+
+    <div fxFlex="70">
+      <h1>{{ avenger.publisher }}</h1>
+      <mat-divider></mat-divider>
+      <mat-list>
+        <mat-list-item>
+          <p>
+            <strong>Primera aparición: </strong> <small>{{ avenger.first_appearance }}</small>
+          </p>
+        </mat-list-item>
+        <mat-list-item>
+          <p>
+            <strong>Personaje: </strong> <small>{{ avenger.characters }}</small>
+          </p>
+        </mat-list-item>
+        <mat-list-item>
+          <p>
+            <strong>Cómic: </strong> <small>{{ avenger.publisher }}</small>
+          </p>
+        </mat-list-item>
+      </mat-list>
+      <br>
+      <button mat-raised-button color="primary" (click)="back()">Back</button>
+    </div>
+  </div>
+
+</ng-template>
