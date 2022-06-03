@@ -1,0 +1,7 @@
+.main {
+  background-image: url(src/assets/backgrounds/background_error_page.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+}
