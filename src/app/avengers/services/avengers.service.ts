@@ -21,4 +21,8 @@ export class AvengersService {
   getAvengerById (id: string): Observable<Avenger> {
     return this.http.get<Avenger>(`${this.URL}/heroes/${id}`);
   }
+
+  getSuggestions (term: string): Observable<Avenger[]> {
+    return this.http.get<Avenger[]>(`${this.URL}/heroes?q=${term}&_limit=6`);
+  }
 }

@@ -1,1 +1,47 @@
-<p>search works!</p>
+<div fxLayout="column">
+  <div>
+    <h1>Avengers Searcher</h1>
+    <mat-divider></mat-divider>
+  </div>
+
+  <div fxLayout="column">
+    <h3>Searcher</h3>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Search...</mat-label>
+      <input
+        type="text"
+        placeholder="Pick one"
+        aria-label="Number"
+        matInput
+        [(ngModel)]="term"
+        name="term"
+        [matAutocomplete]="auto"
+        (input)="searching()"
+      />
+      <mat-autocomplete
+        autoActiveFirstOption
+        #auto="matAutocomplete"
+        (optionSelected)="optionSelected($event)"
+      >
+        <mat-option *ngFor="let avenger of avengers" [value]="avenger">
+          {{ avenger.superhero }}
+        </mat-option>
+
+        <mat-option value="" *ngIf="avengers.length === 0 && term.length > 0">
+          <p>
+            Nothing was found with the term {{ term }}
+          </p>
+        </mat-option>
+      </mat-autocomplete>
+
+    </mat-form-field>
+  </div>
+  <mat-divider></mat-divider>
+
+  <div fxLayout="row" *ngIf="result">
+    <app-avenger-card [avenger]="result"></app-avenger-card>
+  </div>
+
+</div>
+
+
