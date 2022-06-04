@@ -24,7 +24,7 @@ const routes: Routes = [
       },
       {
         path: 'edit/:id',
-        component: EditComponent
+        component: AddComponent
       },
       {
         path: 'search',

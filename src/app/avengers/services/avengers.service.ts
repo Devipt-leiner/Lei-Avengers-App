@@ -25,4 +25,16 @@ export class AvengersService {
   getSuggestions (term: string): Observable<Avenger[]> {
     return this.http.get<Avenger[]>(`${this.URL}/heroes?q=${term}&_limit=6`);
   }
+
+  addAvenger (avenger: Avenger): Observable<Avenger> {
+    return this.http.post<Avenger>(`${this.URL}/heroes`, avenger);
+  }
+
+  updateAvenger (avenger: Avenger): Observable<Avenger> {
+    return this.http.put<Avenger>(`${this.URL}/heroes/${avenger.id}`, avenger);
+  }
+
+  deleteAvenger (id: string): Observable<any> {
+    return this.http.delete<any>(`${this.URL}/heroes/${id}`);
+  }
 }

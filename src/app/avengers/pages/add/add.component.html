@@ -1,1 +1,80 @@
-<p>add works!</p>
+<h1>New Avenger <small>{{ avenger.superhero }}</small> </h1>
+
+<div fxLayout="row" fxLayout.xs="column" fxLayoutGap="40px">
+
+  <div fxLayout="column" fxFlex="50">
+
+    <div fxLayout="row" fxLayoutGap="20px" fxLayout.xs="column">
+      <mat-form-field fxFlex="100" fxLayout.xs="column">
+        <mat-label>Avenger</mat-label>
+        <input
+          type="text"
+          matInput
+          required=""
+          [(ngModel)]="avenger.superhero"
+        >
+      </mat-form-field>
+
+      <mat-form-field fxFlex="100">
+        <mat-label>Alter Ego</mat-label>
+        <input
+          type="text"
+          matInput
+          required=""
+          [(ngModel)]="avenger.alter_ego"
+        >
+      </mat-form-field>
+    </div>
+
+
+    <mat-form-field fxFlex="100">
+      <mat-label>First appearance</mat-label>
+      <input
+        type="text"
+        matInput
+        required=""
+        [(ngModel)]="avenger.first_appearance"
+      >
+    </mat-form-field>
+
+    <mat-form-field fxFlex="100">
+      <mat-label>Characters</mat-label>
+      <input
+        type="text"
+        matInput
+        required=""
+        [(ngModel)]="avenger.characters"
+      >
+    </mat-form-field>
+
+    <mat-form-field fxFlex="100">
+      <mat-label>Image URL</mat-label>
+      <input
+        type="url"
+        matInput
+        required=""
+        [(ngModel)]="avenger.alt_img"
+      >
+    </mat-form-field>
+
+    <div fxLayout>
+      <button mat-raised-button color="primary" (click)="save()">
+        <mat-icon>check</mat-icon>
+        Save
+      </button>
+
+      <span class="spacer"></span>
+
+      <button *ngIf="avenger.id" mat-stroked-button color="primary" (click)="delete()">
+        <mat-icon>delete</mat-icon>
+        Borrar
+      </button>
+    </div>
+
+  </div>
+
+  <div fxFlex="50" fxLayoutAlign="center">
+    <img [src]="avenger | imagen" alt="">
+  </div>
+
+</div>
