@@ -14,6 +14,7 @@ import { ListComponent } from './pages/list/list.component';
 import { EditComponent } from './pages/edit/edit.component';
 import { AvengerCardComponent } from './components/avenger-card/avenger-card.component';
 import { ImagenPipe } from './pipes/imagen.pipe';
+import { LeiCardComponent } from './components/lei-card/lei-card.component';
 
 
 
@@ -27,7 +28,8 @@ import { ImagenPipe } from './pipes/imagen.pipe';
     ListComponent,
     EditComponent,
     AvengerCardComponent,
-    ImagenPipe
+    ImagenPipe,
+    LeiCardComponent
   ],
   imports: [
     CommonModule,
