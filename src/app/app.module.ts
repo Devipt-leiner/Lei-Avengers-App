@@ -8,11 +8,13 @@ import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from './app-routing.module';
 
 import { ErrorPageComponent } from './shared/error-page/error-page.component';
+import { LeiButtonComponent } from './shared/error-page/components/lei-button/lei-button.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    LeiButtonComponent
   ],
   imports: [
     BrowserModule,
